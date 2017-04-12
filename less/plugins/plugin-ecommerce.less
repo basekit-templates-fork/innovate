@@ -1,0 +1,1120 @@
+// ------------------------------------
+// CSS > Plugin: Ecommerce
+// ------------------------------------
+
+// -----------------------------
+// PRODUCT LIST
+// -----------------------------
+
+.product-list {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+
+
+// This sets up the widths for each item
+.product-item {
+    position: relative;
+    width: 32%;
+    margin-bottom: 30px;
+
+    // Display 100% at mobile
+    @media only screen
+    and (max-width : 667px) {
+        width: 100%;
+    }
+}
+
+.ecomproductslist__title-link {
+    color: @color__h4--text;
+}
+
+// Adds margin bottom
+.ecomproduct__product-image {
+    @media @bp-tablet {
+        margin-bottom: 20px;
+    }
+}
+
+// Title
+.product-item-title,
+.product-item-price {
+    text-align: center;
+    font-size: @font__p--font-size;
+    line-height: @font__p--line-height;
+}
+
+.listing-order {
+    font-size: bkscale(@font__p--font-size,0.9);
+    line-height: bkscale(@font__p--line-height,0.9);
+}
+
+.ecomfeaturedproducts__listing-title {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+
+// Ecom Filters
+// -------------------------------------
+
+.ecomproductslist .form,// Ecom Form
+.ecomproductslist .fieldset--filters .form-body,// Ecom Filters
+.ecomproductslist .fieldset--search .form-body { // Ecom Search
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: flex-end;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+.ecomproductslist .form {
+    float: left;
+    width: 100%;
+}
+
+.form-group {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: flex-end;
+    align-self: flex-end;
+    .input,
+    .select {
+        width: 100%;
+    }
+}
+
+.form-group:first-child {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    @media @mobile {
+        width: 100%;
+    }
+}
+
+.form-group:last-child {
+    .button {
+        white-space: nowrap;
+        @media @mobile {
+            white-space: normal;
+        }
+    }
+}
+
+
+// Hide Legend
+.ecomproductslist .legend {
+    display: none;
+}
+
+.ecomproductslist__label {
+        white-space: nowrap;
+}
+
+// Flexbox form on Desktop
+@media only screen and (min-width: 480px) {
+    .fieldset--search {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -webkit-order: 1;
+        -ms-flex-order: 1;
+        order: 1;
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+
+        .form-group:last-child {
+            -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            .button--submit {
+                height: 36px;
+                padding: 0 12px;
+            }
+        }
+    }
+    .fieldset--filters {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        -webkit-flex: 1 1 70%;
+        -ms-flex: 1 1 70%;
+        flex: 1 1 70%;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+        .form-group {
+            -webkit-flex: 0 1 100%;
+            -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+        }
+    }
+}
+
+// Flexbox form on Tablet
+.ecomproductslist .form { // Ecom Form
+    @media @tablet {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-box-pack: start;
+        -moz-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+        -webkit-box-align: stretch;
+        -moz-box-align: stretch;
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        .fieldset--search,
+        .fieldset--filters {
+            -webkit-flex: 0 1 auto;
+            -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+        }
+        .form-group:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+
+// Products list in Responsive Columns
+// -----------------------------------
+
+// Two Columns
+.columns-two-left,
+.columns-two-right,
+// Three Columns
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right,
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    .ecomproductslist .form,// Ecom Form
+    .ecomproductslist .fieldset--filters .form-body,// Ecom Filters
+    .ecomproductslist .fieldset--search .form-body,// Ecom Search
+    .ecomproductslist .form-group {
+        display: inline-block;
+        width: 100%;
+        margin-right: 0;
+        .input {
+            margin-bottom: 10px;
+        }
+        .button {
+            text-align: center;
+            margin-bottom: 10px;
+            white-space: normal;
+        }
+    }
+}
+
+.responsivecolumns {
+    .ecomproductslist,
+    .ecomfeaturedproducts {
+        .product-item,
+        .products-2 .product-item,
+        .products-4 .product-item {
+            position: relative;
+            width: 48%;
+            margin-bottom: 20px;
+            // Display 100% at mobile
+            @media @mobile {
+                width: 100%;
+            }
+        }
+    }
+    .product-item-image,
+    .product-item-image .image-link {
+        height: 250px;
+        line-height: 250px;
+        margin-bottom: 15px;
+        @media @mobile {
+            height: 200px;
+            line-height: 200px;
+        }
+    }
+    .product-actions .form .button,
+    .view-basket-wrap .button {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .product-item-details {
+        text-align: center;
+    }
+}
+
+.responsivecolumns {
+    .ecomproductslist,
+    .ecomfeaturedproducts {
+        // Display 100%
+        .product-item,
+        .ecomfeaturedproducts .products-2 .product-item,
+        .ecomfeaturedproducts .products-4 .product-item {
+            width: 100%;
+        }
+    }
+}
+
+// Ecom form on Mobile
+// -------------------
+
+.ecomproductslist .form,// Ecom Form
+.ecomproductslist .fieldset--filters .form-body,// Ecom Filters
+.ecomproductslist .fieldset--search .form-body,// Ecom Search
+.ecomproductslist .form-group {
+    @media @mobile {
+        display: inline-block;
+        width: 100%;
+        margin-right: 0;
+        .input {
+            margin-bottom: 10px;
+        }
+        .button {
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    }
+}
+
+
+// Responsive Columns
+// ------------------
+
+.responsivecolumns {
+    // Image
+    .product-item-image {
+        height: 200px;
+    }
+
+    // Price
+    .product-item-price {
+        max-width: inherit;
+        height: auto;
+        margin-bottom: 10px;
+        font-size: bkscale(@font__p--font-size,0.8);
+    }
+
+    .product-item-title {
+        font-size: @font__p--font-size;
+        line-height: bkscale(@font__p--line-height,0.8);
+    }
+}
+
+// Product title and price colour
+// ------------------------------
+
+.product-item-title.product-item-title,
+.ecomproductslist__title-link.ecomproductslist__title-link,
+.ecomproduct__product-title {
+    color: @color__ecomproduct-title--text;
+}
+
+.product-item-price,
+.ecomproduct__product-price {
+    color: @color__ecomproduct-price--text;
+}
+
+// Ecomproductslist Pagination
+// ------------------------------
+
+.pagination-item.current .button--pagination {
+    color: @color-swatch6;
+}
+
+
+
+
+// ---------------------------------------
+// SINGLE PRODUCT
+// ---------------------------------------
+
+.bk-pt-ecomproduct {
+    .container {
+        margin: 0;
+        max-width: 2000px;
+        width: auto;
+        @media @bp-tablet {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+    .template-header {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        @media @bp-tablet {
+            position: relative;
+        }
+    }
+    .page-wrapper {
+        padding-top: 0;
+    }
+    .ecomproduct .product-content {
+        padding: 150px 50px 50px;
+        @media @bp-tablet {
+            padding: 0;
+        }
+    }
+    .product-one-image {
+        .template-header {
+            position: relative;
+        }
+        .ecomproduct .product-content {
+            padding: 0;
+        }
+    }
+    .widget--zone-widget {
+        margin:0;
+    }
+} 
+
+
+.ecomproduct {
+
+    &__product-article {
+        background-color: @color__container--background;
+        .flex-display;
+        .justify-content(center);
+
+        @media @bp-tablet {
+            display: block;
+            height: auto;
+        }
+    }
+
+    .product-header,
+    .product-body,
+    .product-attributes {
+        width: 80%;
+    }
+
+
+    &__product-title {
+        margin-bottom: 0;
+        padding-bottom: 4px;
+    }
+
+
+    &__product-price {
+        color: @color__ecomproduct-price--text;
+        font-size: 26px;
+        padding-bottom: 25px;
+    }
+
+
+    &__product-actions {
+        margin: 25px 0 30px;
+    }
+
+
+    &__fieldset {
+        margin-bottom: 15px;
+    }
+
+
+    &__legend {
+        display: none;
+        visibility: hidden;
+    }
+
+
+    &__label {
+        color: darken(@color__form-label--text, 35%);
+    }
+
+
+    &__select-wrap:after {
+        font-size: 18px;
+        right: 5%;
+        top: 50%;
+
+        @media @bp-mobile {
+            right: 22px;
+        }
+    }
+
+
+    &__select-wrap {
+        width: 80%;
+
+        @media @bp-mobile {
+            width: 100%;
+        }
+    }
+
+
+    &__button {
+
+        &.icon--add {
+            width: 80%;
+
+            @media @bp-mobile {
+                width: 100%;
+            }
+        }
+
+        &:before {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+
+    &__view-basket-wrap .button {
+        background-color: fade(@color__button--background, 30%);
+        width: 80%;
+        text-align: center;
+
+        @media @bp-mobile {
+            width: 100%;
+        }
+    }
+
+
+    &__product-attributes {
+        margin: 35px 0 0;
+    }
+
+
+    &__product-attribute-title,
+    &___product-attribute-title,
+    .category-link,
+    .tag-link {
+        font-size: bkscale(@font__p--font-size,0.9);
+        line-height: bkscale(@font__p--line-height,0.9);
+
+    }
+
+
+    &__product-images {
+        background-color: transparent;
+        .flex-display;
+        .align-content(center);
+        .align-items(center);
+        overflow-y: scroll;
+        height: 100vh;         
+        width: 50%;
+
+        @media @bp-tablet {
+            display: block;
+            height: auto;
+            width: 100%;
+        }
+    }
+
+
+    &__product-image,
+    &__product-image .image {
+        display: none;
+        visibility: hidden;
+
+        @media @bp-tablet {
+            display: block;
+            margin: 0 auto;
+            max-height: 400px;
+            padding: 10px 0;
+            visibility: visible;
+            width: auto;
+        }
+
+        @media @bp-mobile {
+            max-height: 250px;
+            padding: 0;
+        }
+    }
+
+
+    &__product-image .image-link {
+        @media @bp-tablet {
+            height: auto;
+            line-height: auto;
+        }
+    }
+
+
+    &__product-gallery {
+        margin: 0;
+        max-height: 100%;
+        width: 100%;
+        position: relative;
+
+        @media @bp-tablet {
+            .flex-display;
+            .justify-content(center);
+            margin: 25px 0 20px;
+        }
+
+        @media @bp-mobile {
+            margin: 15px 0 10px;
+        }
+
+
+        // Product images list element
+        .gallery-item {
+            background-color: transparent;
+            width: 100%;
+            height: auto;
+            line-height: 100%;
+            cursor: pointer;
+            margin-top: -3px;
+
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            @media @bp-tablet {
+                margin: 0 10px;
+                width: auto;
+            }
+
+            @media @bp-mobile {
+                margin-bottom: 10px;
+            }
+        }
+
+
+        // Product image anchor link
+        .image-button {
+            display: block;
+            cursor: default;
+
+
+            @media @bp-tablet {
+                .flex-display;
+                .align-items(center);
+                height: 100px;
+                width: 100px;
+            }
+
+
+            // Product image
+            .image {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+
+                @media @bp-tablet {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+
+    &__product-content {
+        .align-self(center);
+        padding: 8%;
+        width: 50%;
+
+        @media @bp-tablet {
+            padding: 40px 30px 30px;
+            width: 100%;
+        }
+    }
+
+    &__product-category,
+    &__tags-title,
+    &__tag-list {
+        line-height: 20px;
+    }
+}
+
+
+.product-gallery .image-button .image {
+    max-height: inherit;
+}
+
+
+// If only one product image is available show the hidden product image section
+.product-one-image .product-images {
+    .justify-content(center);
+
+    margin: 50px 0 0 50px;
+    @media @bp-tablet {
+        margin: 0;
+    }
+
+    .product-image,
+    .product-image .image {
+        display: block;
+        visibility: visible;
+        margin: 0 auto;
+        width: 100%;
+
+        @media @bp-tablet {
+            width: auto;
+        }
+    }
+
+    .image-link {
+        line-height: auto;
+        height: auto;
+    }
+}
+
+
+
+
+
+// -----------------------------
+// BASKET WIDGET
+// -----------------------------
+
+// Basket Body
+.basket-body {
+    min-width: 40%;
+    width: 100%;
+	padding: 30px;
+
+    @media @bp-tablet {
+        width: 100%;
+    }
+    @media @bp-mobile {
+        padding: 20px;
+    }
+}
+
+// Basket Item
+.basket-item {
+	position: relative;
+	padding: 30px;
+	background-color: @color__body--background;
+    border-top: 1px solid darken(@color-swatch1, 30%);
+
+    &:last-child {
+        border-bottom: 1px solid darken(@color-swatch1, 30%);
+    }
+}
+
+// Remove BG colour on summary form
+.form.basket-summary__summary-form { background-color: transparent; }
+
+
+// Basket Layout
+// -------------
+
+.basket-item-image,
+.basket-item-details {
+    display: inline-block;
+}
+
+
+// Basket Image
+// ------------
+
+.basket-item-image {
+    margin-bottom: 0;
+    margin-right: 20px;
+}
+
+
+// Remove Item Button
+// ------------------
+
+// Position in top-right
+.item-remove {
+	position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    font-size: 14px;
+}
+
+// Remove icon spacing
+.item-remove:before {
+    margin-right: 0;
+}
+
+// Hide button text
+.remove-text {
+    display: none;
+}
+
+
+// Basket Footer
+// -------------
+
+.basket-footer {
+    margin-top: 0;
+    padding: 30px;
+}
+
+.basket-total {
+    padding-bottom: 20px;
+    color: @color__h4--text;
+    text-transform: uppercase;
+}
+
+
+
+
+// -----------------------------
+// BASKET SUMMARY
+// -----------------------------
+
+// Summary Table
+// ------------------------------
+
+.summary-table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    width: 100%;
+    margin: 0;
+
+    // Table and Cells Reset
+    // ------------------------------
+
+    &, td, th, .cell {
+        border: none;
+        background: transparent;
+        padding: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+
+    // Row Heading
+    // ------------------------------
+
+    .table-row {
+        .cell {
+            padding: 5px;
+            border-bottom: 1px solid darken(@color-swatch1, 30%);
+            @media @bp-mobile {
+                border-bottom: none;
+            }
+        }
+        &:last-child .cell {
+            border-bottom: none;
+        }
+        @media @bp-mobile {
+            border-bottom: 1px solid darken(@color-swatch1, 30%);
+        }
+    }
+
+    .table-row--heading {
+        .cell--header {
+            text-align: right;
+        }
+        .cell--header:first-child {
+            text-align: left;
+        }
+        .cell--header:nth-child(2) {
+            text-align: center;
+        }
+        @media @bp-tablet {
+            .cell--header,
+            .cell--header:nth-child(2) {
+                text-align: left;
+            }
+        }
+    }
+
+    // Cell Image
+    // ------------------------------
+
+    .cell--image {
+        width: 126px;
+        padding-left: 10px;
+    }
+
+
+    // Cell Title
+    // ------------------------------
+
+    .cell--title {
+        width: auto;
+        padding-right: 10px;
+        padding-left: 16px;
+
+    }
+
+
+    // Item Title
+    // ------------------------------
+
+    .summary-item-title  {
+        font-size: @font__h4--font-size;
+    }
+
+        // Item Link
+
+        .summary-item-link {
+            color: @font-swatch5-color;
+        }
+
+
+    // Cell Quantity
+    // ------------------------------
+
+    .cell--quantity {
+        width: 10%;
+        min-width: 100px;
+        text-align: center;
+    }
+
+
+    // Cell Total, Cell Price
+    // ------------------------------
+
+    .cell--total,
+    .cell--price {
+        text-align: right;
+    }
+
+
+    // Order Total
+    // ------------------------------
+
+    .cell--order-total {
+        text-align: right;
+        background-color: @color-swatch1;
+    }
+
+
+    // Cell Image Item Link
+    // ------------------------------
+
+    .cell--image .summary-item-link {
+        width: 100px;
+        height: 100px;
+        display: block;
+        line-height: 80px;
+        background-position: -100%;
+        background-color: #fff;
+        padding: 10px;
+
+        // Image
+
+        .image {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 80px;
+            max-height: 80px;
+            @media @bp-mobile {
+                vertical-align: top;
+            }
+        }
+    }
+
+
+    // Row Order Total
+    // ------------------------------
+
+    .table-row--order-total {
+        background-color: transparent;
+    }
+
+        // Order Total
+        .order-total {
+            color: @font-swatch5-color;
+        }
+}
+
+
+// Quantity Wrap
+// ------------------------------
+
+.quantity-wrap {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    background-color: transparent;
+
+    // Button Quantity
+
+    .button--quantity {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    // Quantity Field
+
+    .quantity-field {
+        color: @font-swatch5-color;
+    }
+}
+
+
+
+
+// ------------------------------
+// Mobile Layout
+// ------------------------------
+
+@media @bp-mobile {
+
+
+    // Summary Table
+    // ------------------------------
+
+    .summary-table {
+
+        // Table elements to block elements
+
+        &, .table-row, .cell, .summary-body {
+            display: block;
+        }
+
+        // Table Row Heading
+
+        .table-row--heading {
+            display: none;
+        }
+
+        // Table Row
+
+        .table-row {
+            overflow: hidden;
+            margin-bottom: 10px;
+            clear: both;
+        }
+
+        // Cell Image
+
+        .cell--image {
+            float: left;
+        }
+
+        // Item Title
+
+        .summary-item-title  {
+            font-size: bkscale(@font__h4--font-size, 1);
+        }
+
+        // Cell Price, Cell Total, Cell Quantity LABELS
+
+        .cell--price, .cell--total, .cell--quantity {
+            &:before {
+                content: attr(data-title);
+                display: block;
+                font-size: 13px;
+            }
+        }
+
+        // Cell Quantity
+
+        .cell.cell--quantity {
+            clear: both;
+            padding: 6px 10px;
+            text-align: right;
+            position: relative;
+            width: auto;
+
+            // Pseudo Label - LESS Framework
+
+            &:before {
+                height: 30px;
+                line-height: 30px !important;
+                display: block;
+                position: absolute;
+                right: 90px;
+                top: 6px;
+            }
+        }
+
+        // Quantity Wrap
+
+        .quantity-wrap {
+            margin: 0 -5px 0 auto;
+            width: 80px;
+            max-width: 100%;
+            .button--quantity {
+                line-height: 20px;
+            }
+        }
+
+        // Cell Price
+
+        .cell--price {
+            clear: left;
+        }
+
+        // Order Total
+
+        .order-total {
+            text-align: center;
+        }
+
+        // Cell Price, Cell Total
+
+        .cell--price, .cell--total {
+            float: left;
+            width: 50%;
+            padding: 6px 10px;
+        }
+    }
+}

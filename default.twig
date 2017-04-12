@@ -1,0 +1,34 @@
+
+{% extends "layout.twig" %}
+{% block class %}bk-pt-default{% endblock %}
+{% block content %}
+
+{{widget('extendednavigation', 'navigation', {"align":"left"})|raw}}
+
+<div class="page-wrapper">
+
+    {% include "includes/header.twig" %}
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Page Content -->
+        <section class="template-content">
+
+
+            <!-- Main Widget Zone -->
+            {{zone('main')|raw}}
+
+            <!-- Footer Text Widget -->
+            {% include "includes/footer.twig" %}
+
+        </section>
+        <!-- End Page Content -->
+
+    </div>
+    <!-- End Container -->
+
+</div>
+<!-- End Page Wrapper -->
+
+{% endblock %}
