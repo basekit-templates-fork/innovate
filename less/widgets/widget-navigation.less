@@ -159,7 +159,7 @@ body.edit .extendednavigation {
         letter-spacing: @font__navigation--letter-spacing;
 
         border-bottom: 1px solid transparent;
-        
+
         &:hover {
             color: @color__navigation--text--hover;
             text-decoration: none;
@@ -414,12 +414,16 @@ body.edit .extendednavigation {
         &.folder-open .navigation-list--children {
             display: none;
         }
-      
+
         // Activates hover state open
         &:hover .navigation-list--children {
             display: block;
             width: 100%;
             padding: 20px;
+            position: relative;
+            height: auto;
+            opacity: 1;
+            visibility: visible;
         }
     }
 }
@@ -427,7 +431,7 @@ body.edit .extendednavigation {
 
 // On devices with touch enabled, hover is disabled and the JS toggle (.folder-open) is used
 .extendednavigation .navigation-item {
-  
+
     // Hides hover state
     &:hover .navigation-list--children {
         display: none;
@@ -438,5 +442,9 @@ body.edit .extendednavigation {
         display: block;
         width: 100%;
         padding: 20px;
+        position: relative;
+        height: auto;
+        opacity: 1;
+        visibility: visible;
     }
 }
