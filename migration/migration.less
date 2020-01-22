@@ -49,10 +49,25 @@
        left: -60px; 
     }
     
+
     .row-overlay__edit-control {
         left: 0;
     }
 
+
+    // Hides fixed nav when in row edit mode on mobile
+    .row-editing {
+
+        @media @tablet {
+            [data-widget-type="extendednavigation"] {
+                display: none;
+            }
+
+            .page-wrapper {
+                margin-left: 0;
+            }
+        }
+    }
 
 
     // Migration styles
